@@ -56,11 +56,35 @@
                             <constraint firstItem="D7a-RM-AN3" firstAttribute="top" secondItem="009-pX-Abe" secondAttribute="bottom" id="oA0-KC-hQk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vEY-6l-i6X"/>
+                    <navigationItem key="navigationItem" id="vEY-6l-i6X">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="pWS-3P-A14">
+                            <connections>
+                                <segue destination="2d7-tC-mzy" kind="modal" id="dZ1-eP-mQj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSU-fm-VBp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513" y="447"/>
+            <point key="canvasLocation" x="378" y="447"/>
+        </scene>
+        <!--Add To Do View Controller-->
+        <scene sceneID="fpw-3y-u3y">
+            <objects>
+                <viewController id="2d7-tC-mzy" customClass="AddToDoViewController" customModule="AIDToDoManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8dQ-OJ-tb7"/>
+                        <viewControllerLayoutGuide type="bottom" id="j2B-8A-cTV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fMM-rJ-a5Z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X5C-xz-FOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="769" y="447"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tDO-Af-36a">
