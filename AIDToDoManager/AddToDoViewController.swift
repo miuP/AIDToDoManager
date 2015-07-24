@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddToDoViewController: UIViewController {
+class AddToDoViewController: UIViewController, UITextFieldDelegate {
 
 
     @IBOutlet weak var titleTextField: UITextField!
@@ -16,8 +16,17 @@ class AddToDoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .DateAndTime
+        datePicker.addTarget(self, action: Selector("updateDeadLineTextField:"), forControlEvents: .ValueChanged)
+        deadLineTextField.inputView = datePicker
+    }
 
-        // Do any additional setup after loading the view.
+    func updateDeadLineTextField(sender: UIDatePicker) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+        deadLineTextField.text = dateFormatter.stringFromDate(sender.date)
     }
 
     @IBAction func addButtonTouchUpInside(sender: UIButton) {
@@ -27,6 +36,7 @@ class AddToDoViewController: UIViewController {
     @IBAction func cancelButonTouchUpInside(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+
 
 
 }
