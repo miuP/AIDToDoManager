@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ism-1Z-m1U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Zpq-eI-ile">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--To Do List View Controller-->
         <scene sceneID="9NQ-Y1-a1U">
             <objects>
-                <viewController id="Ism-1Z-m1U" customClass="ToDoListViewController" customModule="AIDToDoManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Ism-1Z-m1U" customClass="ToDoListViewController" customModule="AIDToDoManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="009-pX-Abe"/>
                         <viewControllerLayoutGuide type="bottom" id="SaD-5B-ssQ"/>
@@ -15,10 +15,68 @@
                     <view key="view" contentMode="scaleToFill" id="RdO-5P-dNs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="D7a-RM-AN3">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="2MC-F5-cDB" customClass="ToDoListTableViewCell" customModule="AIDToDoManager" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2MC-F5-cDB" id="U8s-Pt-Lr7">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4I-AK-3r8">
+                                                    <rect key="frame" x="8" y="8" width="304" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="deadLine" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLE-ME-PRO">
+                                                    <rect key="frame" x="8" y="36" width="304" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="deadLineLabel" destination="bLE-ME-PRO" id="hPv-dd-LHt"/>
+                                            <outlet property="titleLabel" destination="K4I-AK-3r8" id="QK6-op-2ci"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="D7a-RM-AN3" firstAttribute="leading" secondItem="RdO-5P-dNs" secondAttribute="leading" id="70h-NC-yZ0"/>
+                            <constraint firstItem="SaD-5B-ssQ" firstAttribute="top" secondItem="D7a-RM-AN3" secondAttribute="bottom" id="FbV-sg-Rz8"/>
+                            <constraint firstAttribute="trailing" secondItem="D7a-RM-AN3" secondAttribute="trailing" id="Hst-jH-q0g"/>
+                            <constraint firstItem="D7a-RM-AN3" firstAttribute="top" secondItem="009-pX-Abe" secondAttribute="bottom" id="oA0-KC-hQk"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="vEY-6l-i6X"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSU-fm-VBp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="513" y="447"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tDO-Af-36a">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zpq-eI-ile" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jhc-ip-WiV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ism-1Z-m1U" kind="relationship" relationship="rootViewController" id="D7b-NB-eaM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pgx-xz-LId" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-19" y="447"/>
         </scene>
