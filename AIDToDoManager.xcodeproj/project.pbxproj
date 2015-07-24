@@ -13,6 +13,7 @@
 		492ED4C91B6235D100D28452 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 492ED4C81B6235D100D28452 /* Images.xcassets */; };
 		492ED4CC1B6235D100D28452 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 492ED4CA1B6235D100D28452 /* LaunchScreen.xib */; };
 		492ED4D81B6235D100D28452 /* AIDToDoManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492ED4D71B6235D100D28452 /* AIDToDoManagerTests.swift */; };
+		A2CB0BCFF0CAB5B25696506A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BCB85DDEE7139E58ABE093F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3BCB85DDEE7139E58ABE093F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		412485527E23476D34F05546 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		492ED4BC1B6235D100D28452 /* AIDToDoManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIDToDoManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		492ED4C01B6235D100D28452 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		492ED4C11B6235D100D28452 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		492ED4D11B6235D100D28452 /* AIDToDoManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIDToDoManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		492ED4D61B6235D100D28452 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		492ED4D71B6235D100D28452 /* AIDToDoManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIDToDoManagerTests.swift; sourceTree = "<group>"; };
+		EAE42225F6FFD304EDB9F0A6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2CB0BCFF0CAB5B25696506A /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,8 @@
 				492ED4BE1B6235D100D28452 /* AIDToDoManager */,
 				492ED4D41B6235D100D28452 /* AIDToDoManagerTests */,
 				492ED4BD1B6235D100D28452 /* Products */,
+				E025ED1A76272A7C3BB8BC91 /* Pods */,
+				9ABF02286FFD1FBDAC426251 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +119,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9ABF02286FFD1FBDAC426251 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BCB85DDEE7139E58ABE093F /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E025ED1A76272A7C3BB8BC91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				412485527E23476D34F05546 /* Pods.debug.xcconfig */,
+				EAE42225F6FFD304EDB9F0A6 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +143,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 492ED4DB1B6235D100D28452 /* Build configuration list for PBXNativeTarget "AIDToDoManager" */;
 			buildPhases = (
+				6088347D01210282D6F64DA9 /* Check Pods Manifest.lock */,
 				492ED4B81B6235D100D28452 /* Sources */,
 				492ED4B91B6235D100D28452 /* Frameworks */,
 				492ED4BA1B6235D100D28452 /* Resources */,
+				8C78FC8093710AFCBFEFE9F6 /* Embed Pods Frameworks */,
+				3047A75BDDFF84D7AAAAD309 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,6 +233,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3047A75BDDFF84D7AAAAD309 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6088347D01210282D6F64DA9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8C78FC8093710AFCBFEFE9F6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		492ED4B81B6235D100D28452 /* Sources */ = {
@@ -338,6 +413,7 @@
 		};
 		492ED4DC1B6235D100D28452 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 412485527E23476D34F05546 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AIDToDoManager/Info.plist;
@@ -348,6 +424,7 @@
 		};
 		492ED4DD1B6235D100D28452 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAE42225F6FFD304EDB9F0A6 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AIDToDoManager/Info.plist;
@@ -409,6 +486,7 @@
 				492ED4DD1B6235D100D28452 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		492ED4DE1B6235D100D28452 /* Build configuration list for PBXNativeTarget "AIDToDoManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +495,7 @@
 				492ED4E01B6235D100D28452 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
