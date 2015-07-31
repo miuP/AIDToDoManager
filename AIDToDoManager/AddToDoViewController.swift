@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddToDoViewController: UIViewController, UITextFieldDelegate {
 
@@ -14,8 +15,14 @@ class AddToDoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var deadLineTextField: UITextField!
 
+    let dateFormatter = NSDateFormatter()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .DateAndTime
         datePicker.addTarget(self, action: Selector("updateDeadLineTextField:"), forControlEvents: .ValueChanged)
@@ -23,13 +30,19 @@ class AddToDoViewController: UIViewController, UITextFieldDelegate {
     }
 
     func updateDeadLineTextField(sender: UIDatePicker) {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
-        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
         deadLineTextField.text = dateFormatter.stringFromDate(sender.date)
     }
 
     @IBAction func addButtonTouchUpInside(sender: UIButton) {
+        let todo = ToDoModel()
+        todo.title = titleTextField.text
+        todo.deadLine = dateFormatter.dateFromString(deadLineTextField.text) ?? NSDate()
+
+        let realm = Realm()
+        realm.write {
+            realm.add(todo, update: false)
+        }
+
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
