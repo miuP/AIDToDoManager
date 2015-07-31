@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ToDoListViewController: UIViewController {
 
+    var todoList = Realm().objects(ToDoModel)
+    let dateFormatter = NSDateFormatter()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
+        dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
     }
 
 }
